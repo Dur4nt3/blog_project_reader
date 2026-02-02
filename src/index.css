@@ -24,12 +24,30 @@
 
     --dark-text: #0f172a;
     --light-text:  #fbfbfc;
+    --dark-subtext: rgb(15 23 42 / 60%);
+
     --background-color: #fbfbfc;
+
     --primary-color: #2563eb;
     --secondary-color: #e8eefc;
     --accent-color: #1e40af;
+
+    --separator-border: #d5dae3;
 }
 
 body {
-    font-family: SourceSerif4, (--font-stack);
+    font-family: SourceSerif4, var(--font-stack);
+
+    color: var(--dark-text);
+    background-color: var(--background-color);
+
+    padding: 1rem;
+    min-height: 100svh;
+
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
