@@ -8,6 +8,8 @@ export default function ArticleCard({ title, summary, author, date }) {
             <p className='card-misc'>
                 {author} @ {date}
             </p>
+
+            <div className="section-divider conditional-divider"></div>
         </div>
     );
 }

@@ -1,9 +1,8 @@
 .home-header {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-
-    border-bottom: 1px solid var(--separator-border);
 
     width: 100%;
     max-width: 30rem;

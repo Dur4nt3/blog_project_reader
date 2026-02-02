@@ -1,6 +1,7 @@
 import HomeHeader from './HomeHeader';
 import HomeMain from './HomeMain';
 import ArticleCard from './ArticleCard';
+import HomeFooter from './HomeFooter';
 
 export default function Root() {
     return (
@@ -26,6 +27,7 @@ export default function Root() {
                     date='January 30th, 2026'
                 />
             </HomeMain>
+            <HomeFooter />
         </>
     );
 }

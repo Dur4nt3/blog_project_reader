@@ -11,6 +11,8 @@ export default function HomeHeader() {
             <h3 className='header-subtext'>
                 Articles, notes, and experiments.
             </h3>
+
+            <div className="section-divider"></div>
         </header>
     );
 }
