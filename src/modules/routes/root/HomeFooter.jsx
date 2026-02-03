@@ -12,8 +12,11 @@ export default function HomeFooter() {
                     >
                         GitHub
                     </a>
-                    <a href={import.meta.env.VITE_AUTHOR_APP} rel='noreferrer noopener'>
+                    <a href={import.meta.env.VITE_AUTHOR_APP}>
                         Author Login
+                    </a>
+                    <a href='/login'>
+                        Reader Login
                     </a>
                 </div>
             </div>
