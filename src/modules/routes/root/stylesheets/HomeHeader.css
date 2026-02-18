@@ -1,4 +1,5 @@
-.home-header {
+.home-header,
+.article-header {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -28,7 +29,8 @@
 }
 
 @media (min-width: 40rem) {
-    .home-header {
+    .home-header,
+    .article-header {
         max-width: 35rem;
     }
 
@@ -38,19 +40,22 @@
 }
 
 @media (min-width: 48rem) {
-    .home-header {
+    .home-header,
+    .article-header {
         max-width: 45rem;
     }
 }
 
 @media (min-width: 64rem) {
-    .home-header {
+    .home-header,
+    .article-header {
         max-width: 50rem;
     }
 }
 
 @media (min-width: 80rem) {
-    .home-header {
+    .home-header,
+    .article-header {
         max-width: 64rem;
     }
 }

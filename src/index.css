@@ -25,15 +25,20 @@
     --dark-text: #0f172a;
     --light-text:  #fbfbfc;
     --dark-subtext: rgb(15 23 42 / 60%);
+    --darker-subtext: rgb(15 23 42 / 80%);
     --misc-subtext: #45556c;
 
     --background-color: #fbfbfc;
+    --background-slight-contrast: #ffffff;
+    --background-blockquote: #f3f4f6;
 
     --primary-color: #2563eb;
     --secondary-color: #e8eefc;
     --accent-color: #1e40af;
 
+    --lighter-separator-border: #e1e5ed;
     --separator-border: #d5dae3;
+    --darker-separator-border: #bac1cc;
 }
 
 body {
@@ -54,6 +59,24 @@ body {
     flex-direction: column;
 
     padding: 0.75rem;
+}
+
+#root:has(.fullscreen-loader) {
+    display: grid;
+    place-items: center;
+}
+
+.fullscreen-loader {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.fullscreen-loader > h1 {
+    font-size: var(--fs-xl);
+    font-weight: 500;
 }
 
 .section-divider {

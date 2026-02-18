@@ -18,7 +18,12 @@ export default function Root() {
             <HomeHeader />
             <HomeMain bodyEmpty={articles.length === 0}>
                 {articles.length === 0 ? (
-                    <NoArticlesNotice />
+                    <NoArticlesNotice
+                        header={'Articles are temporarily unavailable'}
+                        // eslint-disable-next-line @stylistic/max-len
+                        content={`We couldn't load the latest articles. This is likely a temporary
+                issue. Try refreshing, or try again later.`}
+                    />
                 ) : (
                     articles.map((article) => (
                         <ArticleCard

@@ -1,0 +1,184 @@
+/* Various selectors can be found at: "src/modules/routes/root/stylesheets/HomeHeader.css" */
+/* Various selectors can be found at: "src/modules/routes/root/stylesheets/HomeMain.css" */
+
+.article-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-clamp: 6;
+    -webkit-line-clamp: 6;
+    text-overflow: ellipsis;
+
+    font-size: var(--fs-xxl);
+    font-weight: 500;
+
+    margin-bottom: 1rem;
+}
+
+.article-description {
+    word-wrap: break-word;
+    font-size: var(--fs-md);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+}
+
+.article-author,
+.article-latest-edit {
+    word-wrap: break-word;
+    font-size: var(--fs-base);
+    color: var(--darker-subtext);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: end;
+
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--darker-separator-border);
+}
+
+.article-latest-edit {
+    margin: 1rem 0;
+    padding: 0;
+    border: none;
+}
+
+.article-main > .article-markdown-content {
+    flex-grow: 1;
+}
+
+.article-markdown-content h1,
+.article-markdown-content h2,
+.article-markdown-content h3,
+.article-markdown-content h4,
+.article-markdown-content h5,
+.article-markdown-content h6,
+.article-markdown-content p {
+    word-wrap: break-word;
+}
+
+.article-markdown-content h1 {
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+.article-markdown-content h2 {
+    font-size: var(--fs-lg);
+    font-weight: 500;
+    margin: 1.25rem 0;
+}
+
+.article-markdown-content h3 {
+    font-size: var(--fs-md);
+    font-weight: 500;
+    margin: 1rem 0;
+}
+
+.article-markdown-content h4 {
+    font-size: var(--fs-base);
+    font-weight: 400;
+    margin: 0.75rem 0;
+}
+
+.article-markdown-content h5,
+.article-markdown-content h6 {
+    font-size: var(--fs-sm);
+    font-weight: 300;
+    margin: 0.5rem 0;
+}
+
+.article-markdown-content p {
+    margin: 0.5rem 0;
+}
+
+.article-markdown-content ul,
+.article-markdown-content ol {
+    list-style-position: inside;
+    padding: 0;
+    padding-left: 0.75rem;
+
+    margin: 1rem 0;
+}
+
+.article-markdown-content li {
+    margin: 0.75rem 0;
+}
+
+.article-markdown-content blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--darker-separator-border);
+    background: var(--background-blockquote);
+    font-style: italic;
+}
+
+.article-markdown-content strong {
+    font-weight: 700;
+}
+
+.article-markdown-content em {
+    font-style: italic;
+}
+
+.article-markdown-content code {
+    font-family: monospace;
+    font-size: var(--fs-base);
+    background: var(--lighter-separator-border);
+    padding: 0.2rem;
+    border-radius: 0.15rem;
+}
+
+.article-markdown-content pre {
+    background: var(--dark-text);
+    color: var(--light-text);
+    padding: 1.25rem;
+    border-radius: 0;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.article-markdown-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: var(--fs-base);
+}
+
+.article-markdown-content hr {
+    border: none;
+    border-top: 1px solid var(--darker-separator-border);
+    margin: 1.5rem 0;
+}
+
+.article-markdown-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+}
+
+.article-markdown-content a:hover {
+    text-decoration: none;
+}
+
+.article-markdown-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.article-markdown-content .md-break {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 40rem) {
+    .article-author,
+    .article-latest-edit {
+        font-size: var(--fs-sm);
+    }
+}
