@@ -16,5 +16,32 @@ export default async function articleLoader({ params }) {
         return null;
     }
 
-    return { article: jsonData.post, authorName: jsonData.name };
+    const mockComments = [
+        {
+            id: 1,
+            author: {
+                name: 'John'
+            },
+            content: 'Really appreciate the article!',
+            createdAt: new Date().toISOString(),
+            edited: false
+        },
+        {
+            id: 2,
+            author: {
+                name: 'Jane'
+            },
+            content: 'Simple structure, but very clear contract.',
+            createdAt: new Date().toISOString(),
+            edited: true
+        }
+    ];
+    const mockAuthenticated = true;
+
+    return {
+        article: jsonData.post,
+        authorName: jsonData.name,
+        authenticated: mockAuthenticated,
+        comments: mockComments,
+    };
 }

@@ -1,0 +1,130 @@
+.comment-section {
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--separator-border);
+}
+
+.comment-section-heading {
+    font-size: var(--fs-xl);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.all-article-comments {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1rem;
+}
+
+.all-article-comments > * {
+    border-bottom: 1px solid var(--separator-border);
+}
+
+.all-article-comments > * {
+    padding: 1rem 0;
+}
+
+.comment-cont {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-heading > .comment-author {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-width: 20ch;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+
+    font-weight: 500;
+    font-size: var(--fs-base);
+}
+
+.comment-heading > .comment-date {
+    font-size: var(--fs-sm);
+    color: var(--dark-subtext);
+}
+
+.comment-content {
+    font-size: var(--fs-sm);
+    word-wrap: break-word;
+}
+
+.no-comments-notice {
+    color: var(--dark-subtext);
+    font-size: var(--fs-sm);
+}
+
+.comment-login-notice > h3,
+.comment-login-notice > a {
+    font-weight: 400;
+    font-size: var(--fs-sm);
+    color: var(--darker-subtext);
+}
+
+.comment-login-notice > a:hover {
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+.add-comment-form .form-row > textarea {
+    min-height: 6lh;
+}
+
+.add-comment-form button {
+    margin-top: 1rem;
+    margin-left: auto;
+
+    padding: 0.35rem 0.85rem;
+
+    border-radius: 0.35rem;
+    border: none;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    font-weight: 500;
+
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+
+    font-size: var(--fs-base);
+
+    height: calc(1lh + 0.35rem * 2);
+
+    transition: 0.2s ease-in-out;
+}
+
+.add-comment-form button:hover {
+    background-color: var(--hover-accent-lighter);
+}
+
+@media (min-width: 40rem) {
+    .comment-heading > .comment-author {
+        max-width: 45ch;
+    }
+
+    .add-comment-form .form-row > textarea {
+        min-height: 4lh;
+    }
+}
+
+@media (min-width: 48rem) {
+    .add-comment-form .form-row > textarea {
+        min-height: 3lh;
+    }
+}

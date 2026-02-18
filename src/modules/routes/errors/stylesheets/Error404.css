@@ -1,0 +1,33 @@
+.error-404-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.error-404-cont > h1 {
+    font-size: var(--fs-xxxl);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.error-404-cont > h2 {
+    line-height: 1;
+    font-size: var(--fs-xxl);
+    margin-bottom: 0.75rem;
+}
+
+.error-404-cont > p:not(.error-in-depth) {
+    font-style: italic;
+    font-size: var(--fs-md);
+    margin-bottom: 1rem;
+}
+
+.error-404-cont a {
+    color: var(--dark-text);
+    transition: 0.2s ease-in-out;
+}
+
+.error-404-cont a:hover {
+    text-decoration: none;
+}

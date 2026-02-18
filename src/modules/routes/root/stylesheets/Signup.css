@@ -1,0 +1,23 @@
+.login-notice,
+.signup-notice {
+    margin-top: 1rem;
+    font-size: var(--fs-sm);
+}
+
+.login-notice a,
+.signup-notice a {
+    font-style: italic;
+    color: var(--dark-text);
+
+    transition: 0.2s ease-in-out;
+}
+
+.login-notice a:hover,
+.signup-notice a:hover {
+    text-decoration: none;
+}
+
+.signup-popover-link {
+    font-style: italic;
+    color: var(--light-text);
+}

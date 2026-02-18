@@ -4,9 +4,17 @@ import useScrollToTop from '../../utilities/hooks/useScrollToTop';
 import { formatWithNamedMonth } from '../../utilities/formatDate';
 
 import ArticleMain from './ArticleMain';
+
 import ArticleHeader from './ArticleHeader';
+
 import ArticleContent from './ArticleContent';
 import NoArticlesNotice from '../root/NoArticlesNotice';
+
+import CommentSection from './CommentSection';
+import ArticleComments from './ArticleComments';
+import CommentInput from './CommentInput';
+import CommentLoginNotice from './CommentLoginNotice';
+
 import AllArticlesFooter from '../allArticles/AllArticlesFooter';
 
 export default function Article() {
@@ -17,6 +25,12 @@ export default function Article() {
     const article = response?.article !== undefined ? response.article : null;
     const authorName =
         response?.authorName !== undefined ? response.authorName : null;
+
+    const comments = response?.comments !== undefined ? response.comments : [];
+    const authenticated =
+        response?.authenticated !== undefined ? response.authenticated : false;
+
+    console.log(authenticated);
 
     if (article === null || authorName === null) {
         return (
@@ -47,6 +61,14 @@ export default function Article() {
                     article.lastModification
                 )}
             />
+            <CommentSection>
+                <ArticleComments comments={comments} />
+                {authenticated === true ? (
+                    <CommentInput />
+                ) : (
+                    <CommentLoginNotice />
+                )}
+            </CommentSection>
             <AllArticlesFooter />
         </ArticleMain>
     );
