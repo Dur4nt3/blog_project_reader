@@ -25,6 +25,7 @@
     --dark-text: #0f172a;
     --light-text:  #fbfbfc;
     --dark-subtext: rgb(15 23 42 / 60%);
+    --misc-subtext: #45556c;
 
     --background-color: #fbfbfc;
 
@@ -52,7 +53,7 @@ body {
     align-items: center;
     flex-direction: column;
 
-    padding: 0.5rem;
+    padding: 0.75rem;
 }
 
 .section-divider {

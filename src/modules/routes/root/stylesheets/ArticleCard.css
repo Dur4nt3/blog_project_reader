@@ -1,5 +1,5 @@
 .article-card {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0;
 
     display: flex;
     flex-direction: column;
@@ -10,10 +10,16 @@
 .article-card > .card-title {
     cursor: pointer;
     font-size: var(--fs-md);
+    font-weight: 500;
     transition: 0.2s ease-in-out;
 }
 
-.article-card > .card-title:hover {
+.article-card > .card-title > a {
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+.article-card > .card-title > a:hover {
     color: var(--primary-color);
 }
 

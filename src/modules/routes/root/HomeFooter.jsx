@@ -1,5 +1,7 @@
 import './stylesheets/HomeFooter.css';
 
+import { Link } from 'react-router';
+
 export default function HomeFooter() {
     return (
         <footer className='home-footer'>
@@ -15,9 +17,9 @@ export default function HomeFooter() {
                     <a href={`${import.meta.env.VITE_AUTHOR_APP}/login`}>
                         Author Login
                     </a>
-                    <a href='/login'>
+                    <Link to='/login'>
                         Reader Login
-                    </a>
+                    </Link>
                 </div>
             </div>
         </footer>

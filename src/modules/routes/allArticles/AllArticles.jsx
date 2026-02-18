@@ -2,21 +2,21 @@ import { useLoaderData } from 'react-router';
 
 import { formatWithNamedMonth } from '../../utilities/formatDate';
 
-import HomeHeader from './HomeHeader';
-import HomeMain from './HomeMain';
-import ArticleCard from './ArticleCard';
-import NoArticlesNotice from './NoArticlesNotice';
-import HomeFooter from './HomeFooter';
+import AllArticlesHeader from './AllArticlesHeader';
+import AllArticlesMain from './AllArticlesMain';
+import ArticleCard from '../root/ArticleCard';
+import NoArticlesNotice from '../root/NoArticlesNotice';
+import AllArticlesFooter from './AllArticlesFooter';
 
-export default function Root() {
+export default function AllArticles() {
     const response = useLoaderData();
 
     const articles = response?.articles !== undefined ? response.articles : [];
 
     return (
         <>
-            <HomeHeader />
-            <HomeMain bodyEmpty={articles.length === 0}>
+            <AllArticlesHeader />
+            <AllArticlesMain>
                 {articles.length === 0 ? (
                     <NoArticlesNotice />
                 ) : (
@@ -31,8 +31,8 @@ export default function Root() {
                         />
                     ))
                 )}
-            </HomeMain>
-            <HomeFooter />
+            </AllArticlesMain>
+            <AllArticlesFooter />
         </>
     );
 }

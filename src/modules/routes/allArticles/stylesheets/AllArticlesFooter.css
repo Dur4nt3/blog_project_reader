@@ -1,0 +1,34 @@
+/* Some media queries are declared at "src/modules/routes/root/stylesheets/HomeFooter.css" */
+
+.all-articles-footer {
+    margin-top: 1rem;
+
+    width: 100%;
+    max-width: 30rem;
+}
+
+.all-articles-footer > a {
+    color: var(--misc-subtext);
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    text-decoration: none;
+}
+
+.all-articles-footer > a > img {
+    width: 18px;
+    height: 18px;
+}
+
+.all-articles-footer > a:hover > img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(7%) saturate(6310%) hue-rotate(188deg) brightness(95%) contrast(96%);
+}
+
+.all-articles-footer > a > p {
+    font-weight: 500;
+    font-size: var(--fs-sm);
+}
+
+.all-articles-footer > a:hover > p {
+    color: var(--dark-text);
+}

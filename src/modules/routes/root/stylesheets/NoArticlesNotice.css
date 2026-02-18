@@ -1,0 +1,29 @@
+.no-articles-notice {
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.no-articles-notice > h2 {
+    font-size: var(--fs-lg);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.no-articles-notice > p {
+    color: var(--dark-subtext);
+    font-size: var(--fs-sm);
+}
+
+@media (min-width: 40rem) {
+    .no-articles-notice > h2 {
+        font-size: var(--fs-xl);
+    }
+
+    .no-articles-notice > p {
+        font-size: var(--fs-base);
+    }
+}

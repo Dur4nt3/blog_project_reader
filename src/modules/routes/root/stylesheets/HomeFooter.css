@@ -41,22 +41,29 @@
         padding-top: 0.5rem;
         max-width: 35rem;
     }
+
+    footer.all-articles-footer {
+        max-width: 35rem;
+    }
 }
 
 @media (min-width: 48rem) {
-    .home-footer {
+    .home-footer,
+    footer.all-articles-footer {
         max-width: 45rem;
     }
 }
 
 @media (min-width: 64rem) {
-    .home-footer {
+    .home-footer,
+    footer.all-articles-footer {
         max-width: 50rem;
     }
 }
 
 @media (min-width: 80rem) {
-    .home-footer {
+    .home-footer,
+    footer.all-articles-footer {
         max-width: 64rem;
     }
 }
