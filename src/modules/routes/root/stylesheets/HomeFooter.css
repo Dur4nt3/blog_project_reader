@@ -32,9 +32,22 @@
     transition: 0.2s ease-in-out;
 }
 
-.footer-actions > a:hover {
+.footer-actions .quick-logout-button {
+    padding: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--dark-text);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.footer-actions > a:hover,
+.footer-actions .quick-logout-button:hover {
     color: var(--primary-color);
 }
+
+
 
 @media (min-width: 40rem) {
     .home-footer {

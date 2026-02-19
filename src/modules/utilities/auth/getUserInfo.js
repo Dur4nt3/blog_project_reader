@@ -1,9 +1,27 @@
-export default async function getUserInfo() {
-    const serverUrl = `${import.meta.env.VITE_API_URL}/users/me/`;
-    const response = await fetch(serverUrl, {
-        method: 'GET',
-        credentials: 'include',
-    }).catch(() => new Response(null, { status: 502 }));
+import authenticationCheck from './authenticationCheck';
 
-    return response;
+// Returns information about the current user
+// Return a status code if something went wrong
+export default async function getUserInfo() {
+    const response = await authenticationCheck();
+
+    if (response.status === 502) {
+        return 502;
+    }
+
+    if (!response.ok) {
+        return response.status;
+    }
+
+    const jsonData = await response.json();
+
+    if (jsonData.success === false) {
+        return response.status;
+    }
+
+    if (jsonData?.user !== undefined) {
+        return jsonData.user;
+    }
+
+    return 401;
 }

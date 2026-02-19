@@ -1,8 +1,11 @@
 import './stylesheets/HomeFooter.css';
 
-import { Link } from 'react-router';
+import { Link, useFetcher } from 'react-router';
 
-export default function HomeFooter() {
+export default function HomeFooter({ authenticated }) {
+    // eslint-disable-next-line no-unused-vars
+    const fetcher = useFetcher();
+
     return (
         <footer className='home-footer'>
             <div className='footer-content'>
@@ -14,12 +17,21 @@ export default function HomeFooter() {
                     >
                         GitHub
                     </a>
-                    <a href={`${import.meta.env.VITE_AUTHOR_APP}/login`}>
-                        Author Login
-                    </a>
-                    <Link to='/login'>
-                        Reader Login
-                    </Link>
+                    {authenticated ? (
+                        <fetcher.Form method='DELETE' action='/logout'>
+                            <button type='submit' className='quick-logout-button'>Logout</button>
+                        </fetcher.Form>
+                    ) : (
+                        <>
+                            <a
+                                // eslint-disable-next-line @stylistic/max-len
+                                href={`${import.meta.env.VITE_AUTHOR_APP}/login`}
+                            >
+                                Author Login
+                            </a>
+                            <Link to='/login'>Reader Login</Link>
+                        </>
+                    )}
                 </div>
             </div>
         </footer>

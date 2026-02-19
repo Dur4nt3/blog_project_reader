@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useParams } from 'react-router';
 
 import useScrollToTop from '../../utilities/hooks/useScrollToTop';
 import { formatWithNamedMonth } from '../../utilities/formatDate';
@@ -21,16 +21,15 @@ export default function Article() {
     useScrollToTop();
 
     const response = useLoaderData();
+    const params = useParams();
 
     const article = response?.article !== undefined ? response.article : null;
     const authorName =
         response?.authorName !== undefined ? response.authorName : null;
 
     const comments = response?.comments !== undefined ? response.comments : [];
-    const authenticated =
-        response?.authenticated !== undefined ? response.authenticated : false;
 
-    console.log(authenticated);
+    const user = response?.user?.username !== undefined ? response.user : null;
 
     if (article === null || authorName === null) {
         return (
@@ -63,10 +62,10 @@ export default function Article() {
             />
             <CommentSection>
                 <ArticleComments comments={comments} />
-                {authenticated === true ? (
+                {user !== null ? (
                     <CommentInput />
                 ) : (
-                    <CommentLoginNotice />
+                    <CommentLoginNotice articleId={params.articleId} />
                 )}
             </CommentSection>
             <AllArticlesFooter />

@@ -12,6 +12,7 @@ export default function Root() {
     const response = useLoaderData();
 
     const articles = response?.articles !== undefined ? response.articles : [];
+    const user = response?.user?.username !== undefined ? response.user : null;
 
     return (
         <>
@@ -37,7 +38,7 @@ export default function Root() {
                     ))
                 )}
             </HomeMain>
-            <HomeFooter />
+            <HomeFooter authenticated={user !== null} />
         </>
     );
 }

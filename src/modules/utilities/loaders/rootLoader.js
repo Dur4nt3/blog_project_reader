@@ -1,3 +1,5 @@
+import getUserInfo from '../auth/getUserInfo';
+
 export default async function rootLoader() {
     const serverUrl = `${import.meta.env.VITE_API_URL}/posts?count=3`;
     const response = await fetch(serverUrl, {
@@ -10,11 +12,17 @@ export default async function rootLoader() {
         return 502;
     }
 
+    const user = await getUserInfo();
+
     const jsonData = await response.json();
 
     if (jsonData.success !== true) {
-        return 500;
+        return typeof user === 'object' ? { user } : 500;
     }
 
-    return { articles: jsonData.posts };
+
+    return {
+        articles: jsonData.posts,
+        user: typeof user === 'object' ? user : null,
+    };
 }

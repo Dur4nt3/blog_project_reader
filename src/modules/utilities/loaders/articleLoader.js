@@ -1,3 +1,5 @@
+import getUserInfo from '../auth/getUserInfo';
+
 export default async function articleLoader({ params }) {
     // eslint-disable-next-line @stylistic/max-len
     const serverUrl = `${import.meta.env.VITE_API_URL}/posts/${params.articleId}`;
@@ -16,32 +18,33 @@ export default async function articleLoader({ params }) {
         return null;
     }
 
+    const user = await getUserInfo();
+
     const mockComments = [
         {
             id: 1,
             author: {
-                name: 'John'
+                name: 'John',
             },
             content: 'Really appreciate the article!',
             createdAt: new Date().toISOString(),
-            edited: false
+            edited: false,
         },
         {
             id: 2,
             author: {
-                name: 'Jane'
+                name: 'Jane',
             },
             content: 'Simple structure, but very clear contract.',
             createdAt: new Date().toISOString(),
-            edited: true
-        }
+            edited: true,
+        },
     ];
-    const mockAuthenticated = true;
 
     return {
         article: jsonData.post,
         authorName: jsonData.name,
-        authenticated: mockAuthenticated,
+        user: typeof user === 'object' ? user : null,
         comments: mockComments,
     };
 }
