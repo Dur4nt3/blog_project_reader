@@ -2,14 +2,14 @@ import './stylesheets/HomeFooter.css';
 
 import { Link, useFetcher } from 'react-router';
 
-export default function HomeFooter({ authenticated }) {
+export default function HomeFooter({ user }) {
     // eslint-disable-next-line no-unused-vars
     const fetcher = useFetcher();
 
     return (
         <footer className='home-footer'>
             <div className='footer-content'>
-                <p className='credits'>By Dante</p>
+                <p className={user !== null ? 'credits current-user' : 'credits'}>{user !== null ? `@ ${user.name}` : 'By Dante'}</p>
                 <div className='footer-actions'>
                     <a
                         href='https://github.com/Dur4nt3/blog_project_reader'
@@ -17,7 +17,7 @@ export default function HomeFooter({ authenticated }) {
                     >
                         GitHub
                     </a>
-                    {authenticated ? (
+                    {user !== null ? (
                         <fetcher.Form method='DELETE' action='/logout'>
                             <button type='submit' className='quick-logout-button'>Logout</button>
                         </fetcher.Form>

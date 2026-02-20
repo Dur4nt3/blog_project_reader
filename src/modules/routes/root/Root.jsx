@@ -38,7 +38,7 @@ export default function Root() {
                     ))
                 )}
             </HomeMain>
-            <HomeFooter authenticated={user !== null} />
+            <HomeFooter user={user} />
         </>
     );
 }

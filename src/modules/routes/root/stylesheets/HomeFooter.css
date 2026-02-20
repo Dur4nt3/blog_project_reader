@@ -20,6 +20,21 @@
     color: var(--dark-subtext);
 }
 
+.footer-content > .credits {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    max-width: 10ch;
+    word-wrap: break-word;
+    overflow: hidden;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+.footer-content > .credits.current-user {
+    max-width: 25ch;
+}
+
 .footer-actions {
     display: flex;
     gap: 0.5rem;
@@ -57,6 +72,10 @@
 
     footer.all-articles-footer {
         max-width: 35rem;
+    }
+
+    .footer-content > .credits {
+        max-width: 35ch;
     }
 }
 

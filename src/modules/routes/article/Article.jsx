@@ -1,5 +1,7 @@
 import { useLoaderData, useParams } from 'react-router';
 
+import getUserCommentsOnArticle from '../../utilities/getUserCommentsOnArticle';
+
 import useScrollToTop from '../../utilities/hooks/useScrollToTop';
 import { formatWithNamedMonth } from '../../utilities/formatDate';
 
@@ -46,6 +48,9 @@ export default function Article() {
         );
     }
 
+    const currentUserComments =
+        user !== null ? getUserCommentsOnArticle(user.userId, comments) : {};
+
     return (
         <ArticleMain>
             <ArticleHeader
@@ -61,9 +66,12 @@ export default function Article() {
                 )}
             />
             <CommentSection>
-                <ArticleComments comments={comments} />
+                <ArticleComments
+                    comments={comments}
+                    currentUserComments={currentUserComments}
+                />
                 {user !== null ? (
-                    <CommentInput />
+                    <CommentInput articleId={params.articleId} />
                 ) : (
                     <CommentLoginNotice articleId={params.articleId} />
                 )}

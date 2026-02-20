@@ -16,6 +16,8 @@ import loginLoader from './modules/utilities/loaders/loginLoader';
 import signupAction from './modules/utilities/actions/signupAction';
 import loginAction from './modules/utilities/actions/loginAction';
 import logoutAction from './modules/utilities/actions/logoutAction';
+import commentAction from './modules/utilities/actions/commentAction';
+import individualCommentAction from './modules/utilities/actions/individualCommentAction';
 
 import FullscreenLoader from './modules/utilities/miscUI/FullscreenLoader';
 
@@ -39,6 +41,20 @@ const router = createBrowserRouter([
         element: <Article />,
         errorElement: <Error404 />,
         loader: articleLoader,
+        hydrateFallbackElement: <FullscreenLoader />,
+    },
+    {
+        path: '/articles/:articleId/comments',
+        element: <Error404 />,
+        errorElement: <Error404 />,
+        action: commentAction,
+        hydrateFallbackElement: <FullscreenLoader />,
+    },
+    {
+        path: '/articles/:articleId/comments/:commentId',
+        element: <Error404 />,
+        errorElement: <Error404 />,
+        action: individualCommentAction,
         hydrateFallbackElement: <FullscreenLoader />,
     },
     {

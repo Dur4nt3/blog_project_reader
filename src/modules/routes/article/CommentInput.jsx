@@ -1,20 +1,45 @@
+import { useRef, useEffect } from 'react';
 import { useFetcher } from 'react-router';
 
-export default function CommentInput() {
+import FormRowTextArea from '../root/FormRowTextArea';
+import FormLoader from '../../utilities/miscUI/FormLoader';
+import FormLevelError from '../root/FormLevelError';
+
+export default function CommentInput({ articleId }) {
+    const commentRef = useRef(null);
     const fetcher = useFetcher();
+
+    useEffect(() => {
+        if (fetcher.data?.success === true && commentRef.current) {
+            commentRef.current.value = '';
+        }
+    }, [fetcher.data]);
 
     return (
         <div className='post-comment-cont'>
             <fetcher.Form
                 method='POST'
-                action='/comments'
+                action={`/articles/${articleId}/comments`}
                 className='add-comment-form'
             >
-                <div className='form-row'>
-                    <label htmlFor='comment'>Add a comment</label>
-                    <textarea name='comment' id='comment'></textarea>
-                </div>
-                <button type='submit'>Comment</button>
+                {fetcher.data?.errors?.formLevel !== null &&
+                    fetcher.data?.errors?.formLevel !== undefined && (
+                        <FormLevelError
+                            errorText={fetcher.data.errors.formLevel}
+                        />
+                    )}
+
+                <FormRowTextArea
+                    labelContent='Comment'
+                    fieldName='comment'
+                    error={fetcher.data?.errors?.comment}
+                    classes='short-text-area'
+                    ref={commentRef}
+                />
+
+                <button type='submit'>
+                    {fetcher.state === 'idle' ? 'Comment' : <FormLoader />}
+                </button>
             </fetcher.Form>
         </div>
     );
