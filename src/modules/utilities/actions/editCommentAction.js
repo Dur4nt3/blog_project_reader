@@ -1,3 +1,4 @@
+import getCSRFToken from '../auth/getCSRFToken';
 import validateComment from '../validation/validateComment';
 import formatCommentResults from '../formatCommentResults';
 
@@ -18,6 +19,7 @@ export default async function editCommentAction({ request, params }) {
         credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
+            'X-CSRF-Token': getCSRFToken(),
         },
         body: JSON.stringify(jsonData),
     });
