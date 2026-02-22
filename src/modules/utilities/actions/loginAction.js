@@ -1,4 +1,5 @@
 import { redirect } from 'react-router';
+import setCSRFToken from '../auth/setCSRFToken';
 import redirectWhiteList from '../validation/redirectWhiteList';
 import isSafeRedirect from '../validation/isSafeRedirect';
 
@@ -40,6 +41,8 @@ export default async function loginAction({ request }) {
         const returnTo = new URL(request.url).searchParams.get('returnTo');
 
         const safeRedirect = isSafeRedirect(returnTo, redirectWhiteList);
+
+        setCSRFToken(results.csrfToken);
 
         if (safeRedirect === true) {
             return redirect(returnTo);
