@@ -13,7 +13,9 @@ This side of the application only includes the functionality needed to reads and
 
 For the author application visit [this repository](https://github.com/Dur4nt3/blog_project_author).
 
-For the api backend visit [this repository](https://github.com/Dur4nt3/blog_project_api).
+For the API backend visit [this repository](https://github.com/Dur4nt3/blog_project_api).
+
+For the project overview visit [this repository](https://github.com/Dur4nt3/blog_project_overview).
 
 ## Skills Demonstrated
 
